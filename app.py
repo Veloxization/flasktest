@@ -1,12 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return("""<h1>hewwo</h1>
-           <p>you awe wooking at a page OwO</p>""")
+    return render_template("base.html")
 
 if __name__ == "__main__":
     port = os.environ.get('FLASK_PORT') or 8080
